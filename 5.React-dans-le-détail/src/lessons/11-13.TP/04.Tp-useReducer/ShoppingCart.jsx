@@ -13,7 +13,7 @@ function ShoppingCart() {
 
   // States for calcul :
   // Detail number of quantity article by item:
-  const [detailNumberItem, setDetailNumberArticle] = useState();
+  const [detailNumberItem, setDetailNumberArticle] = useState(0);
 
   // totalHT for allArticle :
   const [totalHT, setTotalHT] = useState(0);
@@ -23,6 +23,16 @@ function ShoppingCart() {
 
   // Total:
   const [totalTTC, setTotalTTC] = useState(0);
+
+  // Filter:
+
+  const [filteredList, setFilteredList] = useState([]);
+
+  // Name :
+  const [filterByItemName, setFilterByItemName] = useState("");
+
+  // Category:
+  const [categoryItem, setCategoryItem] = useState("tout");
 
   // Check the state of cart after a new State:
   useEffect(() => {
@@ -156,101 +166,240 @@ function ShoppingCart() {
       evalDetailItem += totalDetailByItem;
     });
     setDetailNumberArticle(evalDetailItem);
-  }, [cart]);
-
-  //5.2 TotalHT by article :
-  useEffect(() => {
+    //5.2 TotalHT by article :
     let evalHT = 0;
     cart.forEach((item) => {
       const totalHTByItem = item.price * item.quantity;
       evalHT += totalHTByItem;
     });
     setTotalHT(evalHT);
-  }, [cart]);
-
-  // 5.3 T.V.A:
-  useEffect(() => {
+    // 5.3 T.V.A:
     let actualTVA = 5.5;
     setTVA(actualTVA);
-  }, [cart]);
-
-  // 5.4 Total T.T.C:
-  useEffect(() => {
+    // 5.4 Total T.T.C:
     let total = (totalHT * TVA).toFixed(2);
     setTotalTTC(total);
-  }, [totalHT, TVA]);
+  }, [cart, totalHT, TVA]);
+
+  // Filter :
+  // by category :
+  const onFilteredCategory = (e) => {
+    const value = e.target.value;
+    setCategoryItem(value);
+    console.log(value);
+  };
+
+  // by name :
+  const onFilteredName = (e) => {
+    const value = e.target.value;
+    setFilterByItemName(value);
+    console.log(value);
+  };
+
+  const filter = () => {
+    // Convert the name into lowerCase :
+    const filterByName = filterByItemName.toLowerCase();
+
+    // Filter the list while the search name and category
+    const filteredArticleList = articleList.filter((item) => {
+      // Check if the inputted name contents the characters who into the initial list
+      const nameMatch = item.productName[1]
+        .toLowerCase()
+        .includes(filterByName);
+
+      // Check if the category matches with the selected category
+      const categoryMatch =
+        categoryItem === "tout" || item.category === categoryItem;
+
+      // Returns true or false if the two conditions are checked:
+      return nameMatch && categoryMatch;
+    });
+
+    // Updated the filteredArticleList with the FilteredList:
+    setFilteredList(filteredArticleList);
+  };
+
+  useEffect(() => {
+    console.log(filteredList);
+  }, [filteredList]);
 
   // 3.Render:
   return (
     <div id="container ShoppingCart">
       <div id="filter">
-        <p>filter</p>
+        <label htmlFor="itemName">Nom</label>
+        <input
+          type="text"
+          name="itemName"
+          id="itemName"
+          value={filterByItemName}
+          onChange={onFilteredName}
+        />
+        <button
+          type="button"
+          aria-label="bouton recherché par nom de produit"
+          onClick={filter}
+        >
+          Chercher
+        </button>
+        <label htmlFor="itemCategory">Tout</label>
+        <input
+          type="radio"
+          name="category"
+          value="tout"
+          id="itemCategory"
+          checked={categoryItem === "tout"}
+          onChange={onFilteredCategory}
+        />
+        <label htmlFor="itemCategory">Fruit</label>
+        <input
+          type="radio"
+          name="category"
+          value="fruit"
+          id="itemCategory"
+          checked={categoryItem === "fruit"}
+          onChange={onFilteredCategory}
+        />
+        <label htmlFor="itemCategory">Légume</label>
+        <input
+          type="radio"
+          name="category"
+          value="légume"
+          id="vegetable"
+          checked={categoryItem === "légume"}
+          onChange={onFilteredCategory}
+        />
       </div>
       <ul id="list">
-        {articleList.map((item) => {
-          return (
-            <li key={item.id} className="item">
-              <figure className="item picture">
-                <img
-                  src={item.picture}
-                  alt={item.productName}
-                  className="img item"
-                />
-              </figure>
-              <div className="item detail">
-                <p className="item name">{item.productName[1]}</p>
-                <p className="item origin">Origine: {item.origin[1]}</p>
-                <p className="item package">Package {item.package}</p>
-                <p className="item price">Prix : {item.price}€</p>
-                <div className="item buttonGroup">
-                  <button
-                    aria-label="bouton ajouter article"
-                    className="btn add"
-                    onClick={() =>
-                      addItemToCart(
-                        item.id,
-                        item.productName[1],
-                        item.category,
-                        item.origin[1],
-                        item.price
-                      )
-                    }
-                  >
-                    Ajouter ➕ 1
-                  </button>
-                  <button
-                    aria-label="bouton retirer article"
-                    className="btn remove"
-                    onClick={() =>
-                      removeArticleFromCart(
-                        item.id,
-                        item.productName,
-                        item.origin,
-                        item.price
-                      )
-                    }
-                  >
-                    Retirer ➖ 1
-                  </button>
-                  <button
-                    aria-label="bouton retirer tous les articles"
-                    className="btn reset"
-                    onClick={() =>
-                      resetArticleFromCart(
-                        item.id,
-                        item.productName,
-                        item.origin,
-                        item.price
-                      )
-                    }
-                  >
-                    Reset 🚮
-                  </button>
-                </div>
-              </div>
-            </li>
-          );
-        })}
+        {filteredList.length > 0
+          ? filteredList.map((item) => {
+              return (
+                <li key={item.id} className="item">
+                  <figure className="item picture">
+                    <img
+                      src={item.picture}
+                      alt={item.productName}
+                      className="img item"
+                    />
+                  </figure>
+                  <div className="item detail">
+                    <p className="item name">{item.productName[1]}</p>
+                    <p className="item origin">Origine: {item.origin[1]}</p>
+                    <p className="item package">Package {item.package}</p>
+                    <p className="item price">Prix : {item.price}€</p>
+                    <div className="item buttonGroup">
+                      <button
+                        aria-label="bouton ajouter article"
+                        className="btn add"
+                        onClick={() =>
+                          addItemToCart(
+                            item.id,
+                            item.productName[1],
+                            item.category,
+                            item.origin[1],
+                            item.price
+                          )
+                        }
+                      >
+                        Ajouter ➕ 1
+                      </button>
+                      <button
+                        aria-label="bouton retirer article"
+                        className="btn remove"
+                        onClick={() =>
+                          removeArticleFromCart(
+                            item.id,
+                            item.productName,
+                            item.origin,
+                            item.price
+                          )
+                        }
+                      >
+                        Retirer ➖ 1
+                      </button>
+                      <button
+                        aria-label="bouton retirer tous les articles"
+                        className="btn reset"
+                        onClick={() =>
+                          resetArticleFromCart(
+                            item.id,
+                            item.productName,
+                            item.origin,
+                            item.price
+                          )
+                        }
+                      >
+                        Reset 🚮
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              );
+            })
+          : articleList.map((item) => {
+              return (
+                <li key={item.id} className="item">
+                  <figure className="item picture">
+                    <img
+                      src={item.picture}
+                      alt={item.productName}
+                      className="img item"
+                    />
+                  </figure>
+                  <div className="item detail">
+                    <p className="item name">{item.productName[1]}</p>
+                    <p className="item origin">Origine: {item.origin[1]}</p>
+                    <p className="item package">Package {item.package}</p>
+                    <p className="item price">Prix : {item.price}€</p>
+                    <div className="item buttonGroup">
+                      <button
+                        aria-label="bouton ajouter article"
+                        className="btn add"
+                        onClick={() =>
+                          addItemToCart(
+                            item.id,
+                            item.productName[1],
+                            item.category,
+                            item.origin[1],
+                            item.price
+                          )
+                        }
+                      >
+                        Ajouter ➕ 1
+                      </button>
+                      <button
+                        aria-label="bouton retirer article"
+                        className="btn remove"
+                        onClick={() =>
+                          removeArticleFromCart(
+                            item.id,
+                            item.productName,
+                            item.origin,
+                            item.price
+                          )
+                        }
+                      >
+                        Retirer ➖ 1
+                      </button>
+                      <button
+                        aria-label="bouton retirer tous les articles"
+                        className="btn reset"
+                        onClick={() =>
+                          resetArticleFromCart(
+                            item.id,
+                            item.productName,
+                            item.origin,
+                            item.price
+                          )
+                        }
+                      >
+                        Reset 🚮
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
       </ul>
       <div id="container ResumeCart">
         <p>Nombre d'articles : {cart.length}</p>

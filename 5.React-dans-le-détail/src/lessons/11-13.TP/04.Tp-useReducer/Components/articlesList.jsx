@@ -589,7 +589,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["carrot", "carotte"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 0.99,
     package: "1kg",
@@ -600,7 +600,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["broccoli", "brocoli"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 1.49,
     package: "unity",
@@ -611,7 +611,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["tomato", "tomate"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["Spain", "Espagne"],
     price: 1.29,
     package: "1kg",
@@ -622,7 +622,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["potatoe", "pomme de terre"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 0.89,
     package: "1kg",
@@ -633,7 +633,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["onion", "oignon"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 0.69,
     package: "1kg",
@@ -644,7 +644,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["cucumber", "concombre"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 1.19,
     package: "unity",
@@ -655,7 +655,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["lettuce", "laitue"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 1.49,
     package: "unity",
@@ -666,7 +666,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["bell-pepper", "poivron"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["Spain", "Espagne"],
     price: 1.99,
     package: "1kg",
@@ -677,7 +677,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["zucchini", "courgette"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["Italy", "Italie"],
     price: 1.39,
     package: "unity",
@@ -688,7 +688,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["spinach", "épinard"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 1.99,
     package: "500g",
@@ -699,7 +699,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["green-beans", "haricot vert"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 2.29,
     package: "500g",
@@ -710,7 +710,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["cauliflower", "chou-fleur"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 1.79,
     package: "unity",
@@ -721,7 +721,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["mushroom", "champignon"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 2.49,
     package: "250g",
@@ -732,7 +732,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["radish", "radis"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 0.99,
     package: "bunch",
@@ -743,7 +743,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["cabbage", "chou"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 1.29,
     package: "unity",
@@ -754,7 +754,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["sweet-potatoe", "Patate douce"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["Spain", "Espagne"],
     price: 1.49,
     package: "1kg",
@@ -765,7 +765,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["artichoke", "artichaut"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 2.99,
     package: "unity",
@@ -776,7 +776,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["eggplant", "aubergine"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["Spain", "Espagne"],
     price: 1.79,
     package: "unity",
@@ -787,7 +787,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["asparagus", "asperge"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 3.99,
     package: "bunch",
@@ -798,7 +798,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["beetroot", "betterave"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 1.29,
     package: "1kg",
@@ -809,7 +809,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["celery", "céleri"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 1.49,
     package: "unity",
@@ -820,7 +820,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["garlic", "ail"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 0.79,
     package: "100g",
@@ -831,7 +831,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["ginger", "gingembre"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["India", "Inde"],
     price: 1.99,
     package: "100g",
@@ -842,7 +842,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["leek", "poireau"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 1.29,
     package: "unity",
@@ -853,7 +853,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["Peas", "Petits pois"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 2.99,
     package: "1kg",
@@ -864,7 +864,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["turnip", "navet"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 1.19,
     package: "unity",
@@ -875,7 +875,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["rhubarb", "rhubarbe"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 1.99,
     package: "bunch",
@@ -886,7 +886,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["scallion", "oignon vert"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 0.99,
     package: "bunch",
@@ -897,7 +897,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["fennel", "fenouil"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 1.79,
     package: "unity",
@@ -908,7 +908,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["parsnip", "panais"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 1.49,
     package: "1kg",
@@ -919,7 +919,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["kale", "chou frisé"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 1.99,
     package: "bunch",
@@ -930,7 +930,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["watercress", "cresson"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 1.79,
     package: "bunch",
@@ -941,7 +941,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["okra", "gombo"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 2.49,
     package: "1kg",
@@ -952,7 +952,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["brussels-sprout", "chou de Bruxelles"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 1.99,
     package: "1kg",
@@ -963,7 +963,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["swiss-chard", "blette"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 1.69,
     package: "bunch",
@@ -974,7 +974,7 @@ const articlesList = [
   {
     id: nanoid(8),
     productName: ["bok-choy", "Chou chinois"],
-    category: "vegetable",
+    category: ["vegetable", "légume"],
     origin: ["France", "France"],
     price: 1.49,
     package: "unity",
