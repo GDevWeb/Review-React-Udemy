@@ -1,0 +1,104 @@
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+#list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 10px;
+  color: black;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 45%;
+  min-height: 250px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+figure {
+  width: 200px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+img.img.item {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}
+
+.item.detail {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+p {
+  width: 100%;
+  text-align: center;
+}
+
+.item.buttonGroup{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 5px;
+}
+button {
+  min-width: 25%;
+  padding: 10px 5px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  color: antiquewhite;
+}
+
+.btn.add {
+  background-color: rgb(0, 128, 90);
+}
+.btn.add:hover {
+  background-color: green;
+}
+.btn.remove {
+  background-color: rgb(255, 69, 90);
+}
+.btn.remove:hover {
+  background-color: orangered;
+}
+.btn.reset {
+  background-color: rgb(220, 20, 60, 90);
+}
+.btn.reset:hover {
+  background-color: crimson;
+}
