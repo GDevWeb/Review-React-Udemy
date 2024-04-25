@@ -3,6 +3,36 @@ h2,
 h3 {
   text-align: center;
 }
+#container.shoppingCart {
+  max-width: 1920px;
+  margin: auto;
+}
+
+#filter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  width: 60%;
+  margin: auto;
+  padding: 1rem;
+}
+
+label {
+  font-weight: bolder;
+}
+
+input {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 10px 5px;
+}
+.btn.search {
+  min-width: 125px;
+  color: black;
+  font-weight: bolder;
+}
 
 #list {
   display: flex;
@@ -67,14 +97,14 @@ p {
   text-align: center;
 }
 
-.item.buttonGroup{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    width: 100%;
-    padding: 10px 5px;
+.item.buttonGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 5px;
 }
 button {
   min-width: 25%;
@@ -102,4 +132,26 @@ button {
 }
 .btn.reset:hover {
   background-color: crimson;
+}
+
+#container.resumeCart {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 80%;
+  margin: auto;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+p.resumeCart.detail.advice {
+  color: black;
+  font-weight: bolder;
+}
+
+p.resumeCart.detail.advice > span {
+  font-weight: 500;
 }
