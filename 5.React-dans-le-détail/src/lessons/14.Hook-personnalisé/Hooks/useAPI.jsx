@@ -28,3 +28,11 @@ export default function useAPI() {
   // 3.Render:
   return { catData, error, loading };
 }
+
+
+/* 
+CQFD les hooks personnalisés :
+
+
+
+*/
